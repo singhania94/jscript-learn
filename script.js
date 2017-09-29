@@ -67,7 +67,45 @@ obj.place = 'Akola';
 //console.log(obj);
 console.log(obj.calculateFunc());
 
-//JavaScript basics theory
-/*
 
+//Scope
+window.func1();
 
+function func1 () {
+    //console.log('function one');
+    func2();
+}
+
+function func2 () {
+    //console.log('function two');
+    func3();
+}
+
+function func3 () {
+    //console.log('function three');  
+}
+
+//This keyword
+console.log('From window : ' + this);
+
+function function1 () {
+    console.log('From function one : ' + this);
+    function2();
+    function function2 () {
+        console.log('From function two : ' + this);    
+    }
+}
+
+window.function1();
+
+var object1 = {
+    name : 'Object',
+    age : '2017',
+    yearOfBirth : '0AD',
+    isMarried : true,
+    calculateFunc : function() {
+        console.log('From object one : ' + this );
+    } 
+};
+
+object1.calculateFunc();
